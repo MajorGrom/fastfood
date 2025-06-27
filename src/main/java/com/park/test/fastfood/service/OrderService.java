@@ -26,7 +26,7 @@ public class OrderService {
 
     private UserRepository userRepository;
 
-    public Order createOrder(OrderCreateDto dto){
+    public Order create(OrderCreateDto dto){
 
         //finds a user with the id, if not found throws an exception
         User user = new User();
@@ -49,6 +49,7 @@ public class OrderService {
 
     }
 
+    
 
     public void convertDtoToEntity (OrderCreateDto dto, Order entity) {
 
