@@ -28,7 +28,6 @@ public class OrderService {
 
     public Order create(OrderCreateDto dto){
 
-        //finds a user with the id, if not found throws an exception
         User user = new User();
         UserService userService = new UserService();
         user = userService.getEntity(dto.getUserID());
@@ -42,11 +41,6 @@ public class OrderService {
         orderRepository.save(entity);
 
         return entity;
-
-
-
-
-
     }
 
     

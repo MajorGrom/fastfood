@@ -26,25 +26,22 @@ import lombok.Setter;
 @Setter
 
 @Entity
-@Table(name = "order")
+@Table(name = "food_order")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user", nullable = false)
+    @JoinColumn(name = "food_user", nullable = false)
     private User user;
 
     //
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "food_order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<DishOrder> dishes = new ArrayList<>();
     
     private String description;
     private OrderStatus status;
-
-
-    
 
     @Column(name = "user_id")
     private UUID userID;

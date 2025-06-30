@@ -9,23 +9,19 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.park.test.fastfood.dto.User.UserCreateDto;
-import com.park.test.fastfood.dto.User.UserDetailDto;
+
 import com.park.test.fastfood.dto.order.OrderCreateDto;
 import com.park.test.fastfood.model.Order;
-import com.park.test.fastfood.model.User;
 import com.park.test.fastfood.service.OrderService;
-import com.park.test.fastfood.service.UserService;
 
 import jakarta.validation.Valid;
 
 public class OrderController {
+
     @Autowired
     OrderService orderService;
-
     
     @GetMapping("/{id}")
     public ResponseEntity<?> get(@PathVariable UUID id){

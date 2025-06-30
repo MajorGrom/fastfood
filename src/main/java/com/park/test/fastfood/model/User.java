@@ -20,7 +20,7 @@ import lombok.Setter;
 @Setter
 
 @Entity
-@Table(name = "user_test")
+@Table(name = "food_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
